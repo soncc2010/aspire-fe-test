@@ -140,11 +140,32 @@
       transform: translateY(-50%) rotate(45deg);
     }
 
+    &-txt {
+      display: inline-block;
+
+      &::before {
+        content: "-";
+        margin-right: convert-rem(5);
+      }
+    }
+
     &--up {
       color: $green;
+      #{$root}__number-txt {
+        &::before {
+          content: "+";
+        }
+      }
+    }
+
+    &--down {
+      #{$root}__number-txt {
+        &::before {
+          content: "-";
+        }
+      }
     }
   }
-
 
   &__bx {
     padding-right: convert-rem(5);

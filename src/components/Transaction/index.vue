@@ -12,7 +12,13 @@
         </button>
       </div>
       <div>
-        <p class="transaction__number transaction__number--up">+ S$ 150</p>
+        <p
+          :class="`transaction__number transaction__number--${
+            item.price < 0 ? 'down' : 'up'
+          }`"
+        >
+          <span class="transaction__number-txt">S$ {{ item.price }}</span>
+        </p>
       </div>
     </div>
   </div>
