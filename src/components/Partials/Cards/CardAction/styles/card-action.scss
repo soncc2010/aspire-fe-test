@@ -63,5 +63,10 @@ $icon-actions: (
 
 @include media-breakpoint-up("lg") {
   .card-action {
+    border-radius: convert-rem(16);
+
+    &__ls {
+      padding: 0 convert-rem(7);
+    }
   }
 }

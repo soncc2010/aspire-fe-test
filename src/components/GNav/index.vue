@@ -2,7 +2,10 @@
   <nav class="g-nav">
     <ul class="g-nav__ls">
       <li class="g-nav__item">
-        <router-link to="/" class="g-nav__link g-nav__link--home"  exact-to="/cards"
+        <router-link
+          to="/"
+          class="g-nav__link g-nav__link--home"
+          exact-to="/cards"
           >Home</router-link
         >
       </li>
