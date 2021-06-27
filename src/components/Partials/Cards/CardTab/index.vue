@@ -27,7 +27,7 @@
   </nav>
   <div class="card-body">
     <transition name="component-fade" mode="out-in">
-      <component :is="currentTab" class="tab"></component>
+      <component :is="currentTab"></component>
     </transition>
   </div>
 </template>
