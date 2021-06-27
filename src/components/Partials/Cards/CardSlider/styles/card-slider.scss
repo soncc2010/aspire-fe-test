@@ -73,7 +73,7 @@
   &__pagination {
     margin-top: convert-rem(11);
     &-button {
-      background-color: rgba(1, 209, 103, 1);
+      background-color: rgba(1, 209, 103, 0.1);
       height: convert-rem(8);
       width: convert-rem(8);
       border-radius: convert-rem(8);
@@ -100,5 +100,14 @@
   ::v-deep .carousel {
     overflow: unset;
     padding-top: convert-rem(60);
+
+    &__pagination {
+      &-button {
+        background-color: rgba(1, 209, 103, 0.2);
+        &--active {
+          background-color: $green;
+        }
+      }
+    }
   }
 }
