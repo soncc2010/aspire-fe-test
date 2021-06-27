@@ -8,6 +8,8 @@ yarn install
 ### Compiles and hot-reloads for development
 ```
 yarn serve
+
+http://localhost:888/
 ```
 
 ### Compiles and minifies for production
