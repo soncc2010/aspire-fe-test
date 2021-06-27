@@ -1,0 +1,104 @@
+.card-slider {
+  margin-bottom: convert-rem(24);
+  margin-right: convert-rem(-24);
+  padding-right: 30px;
+  overflow: hidden;
+  position: static;
+
+  &__btn-show {
+    background-color: $white;
+    border: 0;
+    box-shadow: none;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    top: convert-rem(-25);
+    right: convert-rem(12);
+    color: $green;
+    z-index: 0;
+    border-radius: 6px;
+    font-size: convert-rem(12);
+    line-height: 1.7;
+    padding: convert-rem(5) convert-rem(10) convert-rem(15) convert-rem(32);
+
+    &::before {
+      content: "";
+      font-size: convert-rem(16);
+      position: absolute;
+      top: convert-rem(6);
+      left: convert-rem(10);
+      width: convert-rem(16);
+      height: convert-rem(16);
+      background-position: center center;
+      background-repeat: no-repeat;
+      // background-image: url(#{$base-url}icon_eye_blue.svg);
+      background-size: convert-rem(16) convert-rem(16);
+    }
+
+    &--visa {
+      color: $green;
+      &::before {
+        background-image: url(#{$base-url}icon_eye.svg);
+      }
+    }
+
+    &--master {
+      color: $blue-600;
+      &::before {
+        background-image: url(#{$base-url}icon_eye_blue.svg);
+      }
+    }
+
+    &--debit {
+      color: $pink;
+      &::before {
+        background-image: url(#{$base-url}icon_eye_pink.svg);
+      }
+    }
+  }
+}
+
+::v-deep .carousel {
+  overflow: unset;
+  padding-top: convert-rem(50);
+
+  &__slide {
+    padding-right: convert-rem(12);
+  }
+
+  &__viewport {
+    overflow: unset;
+  }
+
+  &__pagination {
+    margin-top: convert-rem(11);
+    &-button {
+      background-color: rgba(1, 209, 103, 1);
+      height: convert-rem(8);
+      width: convert-rem(8);
+      border-radius: convert-rem(8);
+
+      &--active {
+        background-color: $green;
+        width: convert-rem(16);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up("lg") {
+  .card-slider {
+    margin-bottom: convert-rem(24);
+    margin-right: 0;
+    padding-right: 0;
+
+    &__btn-show {
+      top: convert-rem(-32);
+    }
+  }
+
+  ::v-deep .carousel {
+    overflow: unset;
+    padding-top: convert-rem(60);
+  }
+}

@@ -1,0 +1,69 @@
+.card-tab {
+  $root: &;
+
+  display: flex;
+  list-style: none;
+  margin: convert-rem(24) convert-rem(-16) 0;
+
+  &__txt {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      height: 2px;
+      width: 100%;
+      background-color: transparent;
+    }
+  }
+
+  &__link {
+    font-size: inherit;
+    color: rgba($white, 0.5);
+    padding-bottom: 3px;
+
+    &:active {
+      color: rgba($white, 0.5);
+    }
+
+    &.is-active {
+      color: $white;
+
+      #{$root}__txt {
+        &::after {
+          background-color: $blue-500;
+        }
+      }
+    }
+  }
+
+  &__item {
+    font-size: convert-rem(13);
+    font-weight: $font-weight-bold;
+    line-height: 1.5;
+    padding: 0 convert-rem(16);
+  }
+}
+
+@include media-breakpoint-up("lg") {
+  .card-tab {
+    $root: &;
+    margin-bottom: convert-rem(16);
+
+    &__link {
+      color: rgba(#222, 0.3);
+
+      &:active {
+        color: rgba(#222, 0.3);
+      }
+
+      &.is-active {
+        color: $black;
+      }
+    }
+  }
+}

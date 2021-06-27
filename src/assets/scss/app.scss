@@ -1,0 +1,40 @@
+// abstracts
+@import './abstracts/abstracts';
+
+// Vendor
+
+// base
+@import './base/reset';
+@import './base/fonts';
+@import './base/base';
+
+
+// vendor
+
+// layout
+@import './layout/wrapper';
+@import './layout/container';
+@import './layout/section';
+@import './layout/main';
+@import './layout/grid';
+
+// components
+@import './components/icon';
+@import './components/form';
+@import './components/heading';
+@import './components/button';
+@import './components/card';
+@import './components/empty-content';
+
+// ultis
+@import './ultis/text';
+@import './ultis/spacing';
+@import './ultis/bg';
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}

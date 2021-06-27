@@ -1,0 +1,109 @@
+.card-type {
+  $root: &;
+
+  width: 100%;
+  height: 220px;
+  background-color: transparent;
+  border-radius: convert-rem(12);
+  color: $white;
+  padding: convert-rem(24);
+  text-align: left;
+  position: relative;
+  z-index: 1;
+
+  &__logo {
+    text-align: right;
+
+    img {
+      width: convert-rem(74);
+      display: inline-block;
+      margin-right: 0;
+    }
+  }
+
+  &__name {
+    font-size: convert-rem(22);
+    line-height: 1;
+    margin: convert-rem(24) 0;
+  }
+
+  &__code {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: convert-rem(-12);
+    margin-right: convert-rem(-12);
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    font-size: convert-rem(14);
+
+    &-dot {
+      width: convert-rem(8);
+      height: convert-rem(8);
+      border-radius: 50%;
+      background: $white;
+      margin-right: convert-rem(6);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-item {
+      display: flex;
+      padding-left: convert-rem(12);
+      padding-right: convert-rem(12);
+    }
+  }
+
+  &__expire {
+    display: flex;
+    font-size: convert-rem(13);
+    line-height: 1;
+    font-weight: $font-weight-bold;
+    margin: convert-rem(13) convert-rem(-15) 0;
+
+    &-name {
+      margin: 0;
+    }
+
+    &-cnt {
+      margin: 0;
+      padding: 0 0 0 convert-rem(4);
+
+      &--cw {
+        font-size: convert-rem(24);
+        position: relative;
+        top: convert-rem(5);
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      padding-left: convert-rem(15);
+      padding-right: convert-rem(15);
+    }
+  }
+
+  &__type {
+    text-align: right;
+    margin-top: convert-rem(3);
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  &--visa {
+    background-color: $green-600;
+  }
+
+  &--master {
+    background-color: $blue-600;
+  }
+
+  &--debit {
+    background-color: $pink;
+  }
+}

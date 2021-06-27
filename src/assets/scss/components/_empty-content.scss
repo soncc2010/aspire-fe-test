@@ -1,0 +1,23 @@
+.empty {
+  color: $white;
+  font-size: convert-rem(16);
+  text-align: center;
+  padding: convert-rem(50) 0;
+
+  &__content {
+    background-color: rgba($white, 0.1);
+    padding: convert-rem(50);
+    border-radius: convert-rem(8);
+  }
+}
+
+@include media-breakpoint-up("lg") {
+  .empty {
+    color: $black;
+    text-align: left;
+    
+    &__content {
+      padding: 0;
+    }
+  }
+}

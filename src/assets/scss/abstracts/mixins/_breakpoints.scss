@@ -1,0 +1,58 @@
+@function breakpoint-min($key-breakpoint, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $key-breakpoint);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($key-breakpoint, $breakpoints: $grid-breakpoints) {
+  $max: map-get($breakpoints, $key-breakpoint);
+  @return if($max != 0, $max  - 1, null);
+}
+
+@function breakpoint-modifier($key-breakpoint, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($key-breakpoint, $breakpoints) == null, "", "--#{$key-breakpoint}");
+}
+
+@function breakpoint-infix($key-breakpoint, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($key-breakpoint, $breakpoints) == null, "", "-#{$key-breakpoint}");
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($key-breakpoint, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($key-breakpoint, $breakpoints);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($key-breakpoint, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($key-breakpoint, $breakpoints);
+  
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-bettwen($key-breakpoint-max, $key-breakpoint-min, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($key-breakpoint-max, $breakpoints);
+  $min: breakpoint-min($key-breakpoint-min, $breakpoints);
+
+  @if $min and $max {
+    @media (max-width: $max) and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

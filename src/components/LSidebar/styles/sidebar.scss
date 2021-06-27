@@ -1,0 +1,64 @@
+.sidebar {
+  text-align: right;
+
+  &__logo {
+    display: inline-block;
+    margin: convert-rem(25) convert-rem(25) 0 0;
+
+    img {
+      display: none;
+    }
+
+    &-link {
+      display: inline-block;
+      width: convert-rem(24);
+      height: convert-rem(24);
+      background-color: $blue;
+      background: url(#{$base-url}logo_sp.svg) no-repeat center center;
+      background-size: cover;
+    }
+  }
+
+  &__des {
+    display: none;
+  }
+}
+
+@include media-breakpoint-up("lg") {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    flex: 0 0 convert-rem(340);
+    width: convert-rem(340);
+    background-color: $blue-900;
+    padding: convert-rem(48);
+    box-shadow: none;
+    text-align: left;
+    overflow-y: auto;
+    height: 100%;
+
+    &__logo {
+      display: block;
+      margin: 0 0 convert-rem(19);
+
+      img {
+        display: block;
+        width: convert-rem(125);
+      }
+
+      &-link {
+        background: none;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    &__des {
+      display: block;
+      color: rgba($white, 0.3);
+      font-size: convert-rem(15);
+      line-height: 1.33;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@mixin button-hover($color) {
+  &:hover,
+  &:focus {
+    color: $color;
+  }
+}
+
+.btn {
+  $root: &;
+
+  display: inline-block;
+  box-shadow: none;
+  border: 0;
+  border-radius: convert-rem(4);
+  background-color: transparent;
+  cursor: pointer;
+  padding: convert-rem(9) convert-rem(10) convert-rem(8);
+  font-size: convert-rem(13);
+  line-height: 1.5;
+  transition: $transition-base;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.7;
+  }
+
+  &--primary {
+    background-color: $blue;
+    color: $white;
+
+    @include button-hover($white);
+  }
+
+  &--success {
+    background-color: $green;
+    color: $white;
+
+    @include button-hover($white);
+  }
+
+  &--outline-success {
+    border: 1px solid $green;
+    color: $green;
+  }
+
+  &--sm {
+    padding: convert-rem(5) convert-rem(8);
+  }
+
+  &--min-lg {
+    min-width: convert-rem(200);
+  }
+
+  &--min-sm {
+    min-width: convert-rem(120);
+  }
+
+  &--add {
+    font-size: convert-rem(13);
+
+    #{$root}__txt {
+      position: relative;
+
+      &::before {
+        content: "\e80f";
+        display: inline-block;
+        font-family: 'aspire';
+        font-size: convert-rem(16);
+        line-height: 1;
+        margin-right: convert-rem(8);
+      }
+    }
+  }
+}

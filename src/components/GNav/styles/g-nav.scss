@@ -1,0 +1,110 @@
+$g-nav-icon: (
+  "home": "\e808",
+  "card": "\e810",
+  "payment": "\e80a",
+  "credit": "\e801",
+  "setting": "\e80e",
+);
+
+.g-nav {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  background-color: $white;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  padding: convert-rem(12) 0;
+
+  &__link {
+    display: block;
+    color: $gray-400;
+    font-size: convert-rem(9);
+    position: relative;
+    text-align: center;
+
+    &.is-active,
+    &.extract-active,
+    &:hover {
+      color: $green;
+    }
+
+    &:active {
+      color: $green;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: convert-rem(24);
+      position: relative;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin: 0 auto convert-rem(4);
+    }
+
+    @each $key-icon, $icon in $g-nav-icon {
+      &--#{$key-icon} {
+        &::before {
+          content: $icon;
+          font-family: "aspire";
+          font-size: convert-rem(24);
+          line-height: 1;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    flex: 1;
+  }
+
+  &__ls {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@include media-breakpoint-up("lg") {
+  .g-nav {
+    position: relative;
+    box-shadow: none;
+    background-color: transparent;
+
+    &__ls {
+      display: block;
+    }
+
+    &__link {
+      font-size: convert-rem(16);
+      line-height: 2;
+      padding: 0 0 0 convert-rem(39);
+      color: $white;
+      text-align: left;
+      transition: $transition-base;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: convert-rem(3);
+        margin: 0;
+      }
+
+      @each $key-icon, $icon in $g-nav-icon {
+        &--#{$key-icon} {
+          &::before {
+            font-size: convert-rem(24);
+          }
+        }
+      }
+    }
+
+    &__item {
+      display: block;
+      padding: 0;
+      margin: convert-rem(51) 0;
+    }
+  }
+}

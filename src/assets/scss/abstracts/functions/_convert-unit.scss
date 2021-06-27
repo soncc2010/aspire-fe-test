@@ -1,0 +1,65 @@
+@use "sass:math";
+
+@function strip-unit($number) {
+    $strip: ($number * 0 + 1);
+    @return math.div($number, $strip);
+}
+
+@function set-rem($value: 16, $font-size-root: 16) {
+    $unit: 1rem;
+
+    @if ($value==0) {
+        @return $value;
+    }
+    @return  math.div($value, $font-size-root) * $unit;
+}
+
+@function convert-rem($value: 16) {
+    @if (type-of($value)=='number') {
+        $unit: unit($value);
+        $number: strip-unit($value);
+
+        @if ($unit=='px') {
+            @return set-rem($number);
+        }
+
+        @else if ($unit=='') {
+            @return set-rem($number);
+        }
+    }
+
+    @else {
+        @warn 'Not a number';
+    }
+}
+
+
+@function set-vw($value: 16, $vw: 375) {
+    $unit: 1vw;
+
+    @if ($value==0) {
+        @return $value;
+    }
+
+    $vw-target: $vw * 0.01;
+    @return $value / $vw-target * $unit;
+}
+
+@function convert-vw($value: 16) {
+    @if (type-of($value)=='number') {
+        $unit: unit($value);
+        $number: strip-unit($value);
+
+        @if ($unit=='px') {
+            @return set-rem($number);
+        }
+
+        @else if ($unit=='') {
+            @return set-rem($number);
+        }
+    }
+
+    @else {
+        @warn 'Not a number';
+    }
+}

@@ -1,0 +1,21 @@
+.heading {
+  font-size: $h2;
+  margin-bottom: convert-rem(30);
+  position: relative;
+
+  &__txt {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: convert-rem(50);
+      height: convert-rem(5);
+      background-color: $green;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 1;
+      transform: translateX(-50%);
+    }
+  }
+}

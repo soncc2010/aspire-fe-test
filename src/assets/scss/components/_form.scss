@@ -1,0 +1,36 @@
+.form-group {
+  margin-bottom: convert-rem(25);
+}
+
+.form-label {
+  display: block;
+  margin: 0 0 convert-rem(8);
+  padding: 0;
+}
+
+.form-control {
+  border: 1px solid $gray-200;
+  padding: convert-rem(10) convert-rem(10);
+  width: 100%;
+
+  &.is-invalid {
+    border-color: $red;
+  }
+
+  &.is-valid {
+    border-color: $green;
+  }
+}
+
+.form-required {
+  color: $red;
+}
+
+.invalid-feedback {
+  color: $red;
+  margin-top: convert-rem(5);
+}
+
+.valid-feedback {
+  color: $green;
+}

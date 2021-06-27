@@ -1,0 +1,160 @@
+.transaction {
+  $root: &;
+
+  display: flex;
+  padding: convert-rem(16) 0 convert-rem(35);
+  border-bottom: 1px solid $gray-300;
+
+  &__icon {
+    flex: 0 0 convert-rem(48);
+    max-width: convert-rem(48);
+
+    &-type {
+      background-color: transparent;
+      font-size: convert-rem(16);
+      display: block;
+      height: convert-rem(48);
+      width: convert-rem(48);
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "aspire";
+      }
+    }
+  }
+
+  &--storage {
+    #{$root}__icon {
+      &-type {
+        background-color: $blue-200;
+        color: $blue-500;
+
+        &::before {
+          content: "\e804";
+        }
+      }
+    }
+  }
+
+  &--flight {
+    #{$root}__icon {
+      &-type {
+        background-color: $green-200;
+        color: $green;
+
+        &::before {
+          content: "\e805";
+        }
+      }
+    }
+  }
+
+  &--megaphone {
+    #{$root}__icon {
+      &-type {
+        background-color: $pink-100;
+        color: $pink;
+
+        &::before {
+          content: "\e809";
+        }
+      }
+    }
+  }
+
+  &__date {
+    color: $gray;
+    font-size: convert-rem(13);
+    line-height: 1.46;
+    margin: convert-rem(4) 0 convert-rem(12);
+  }
+
+  &__btn {
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: $blue-600;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    padding-left: convert-rem(32);
+    position: absolute;
+    left: 0;
+    top: auto;
+    z-index: 1;
+    text-align: left;
+    min-height: convert-rem(20);
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: convert-rem(24);
+      height: convert-rem(20);
+      background: $blue-600 url(#{$base-url}/icon_business-finance.svg)
+        no-repeat center center;
+      background-size: convert-rem(10) auto;
+      border-radius: 90%;
+      font-family: "aspire";
+      color: $white;
+      font-size: convert-rem(8);
+    }
+  }
+
+  &--btn-more {
+    color: $green;
+    font-size: convert-rem(13);
+    line-height: 1.46;
+    padding: convert-rem(16) 0;
+  }
+
+  &__number {
+    color: $black;
+    font-size: convert-rem(14);
+    line-height: 1.35;
+    font-weight: $font-weight-bold;
+    position: relative;
+    padding-right: convert-rem(10);
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      border-width: 1px 1px 0 0;
+      border-color: $gray-200;
+      border-style: solid;
+      width: 8px;
+      height: 8px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &--up {
+      color: $green;
+    }
+  }
+
+
+  &__bx {
+    padding-right: convert-rem(5);
+  }
+
+  &__cnt {
+    flex: 1;
+    display: flex;
+    padding-left: convert-rem(12);
+    justify-content: space-between;
+    position: relative;
+  }
+}

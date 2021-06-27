@@ -1,0 +1,46 @@
+@include media-breakpoint-up("lg") {
+  .grid-card {
+    $root: &;
+
+    display: flex;
+
+    &__col1 {
+      flex: 0 0 convert-rem(414);
+      max-width: convert-rem(414);
+    }
+  
+    &__col2 {
+      flex: 1;
+      padding-left: convert-rem(46);
+      padding-top: convert-rem(60);
+    }
+  }
+}
+
+@include media-breakpoint-bettwen("xxl", "xl") {
+  .grid-card {
+    &__col1 {
+      flex: 0 0 58%;
+      max-width: 58%;
+    }
+    
+    &__col2 {
+      padding-left: convert-rem(20);
+    }
+  }
+}
+
+@include media-breakpoint-bettwen("xl", "lg") {
+  .grid-card {
+    flex-wrap: wrap;
+
+    &__col1 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    
+    &__col2 {
+      padding-left: 0;
+    }
+  }
+}

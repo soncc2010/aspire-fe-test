@@ -1,0 +1,10 @@
+.main {
+  padding-bottom: convert-rem(60);
+}
+
+@include media-breakpoint-up("lg") {
+  .main {
+    padding: convert-rem(50) convert-rem(36);
+    margin-left: convert-rem(340);
+  }
+}

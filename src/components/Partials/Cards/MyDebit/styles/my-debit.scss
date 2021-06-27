@@ -1,0 +1,25 @@
+.accordion-card {
+  &__btn-more {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    background-color: $green-200;
+    color: $green;
+    text-align: center;
+    font-size: convert-rem(13);
+    line-height: 1.46;
+    font-weight: $font-weight-bold;
+    padding: convert-rem(16);
+    border-bottom-left-radius: convert-rem(8);
+    border-bottom-right-radius: convert-rem(8);
+  }
+}
+
+@include media-breakpoint-down("lg") {
+  .accordion-card {
+    padding-top: convert-rem(24);
+  }
+}

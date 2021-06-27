@@ -1,0 +1,29 @@
+// Font weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Font family
+$font-base: 'Open Sans', sans-serif;
+
+// body
+$body-color: $black;
+$body-font-size: 14px;
+$body-line-height: 1.25;
+$body-font-weight: $font-weight-regular;
+
+// Links
+$link-color: #459bd9;
+
+// heading
+
+$ratio: 1.14;
+
+$h6: 1.14rem;
+$h5: $h6 * $ratio;
+$h4: $h5 * $ratio;
+$h3: $h4 * $ratio;
+$h2: $h3 * $ratio;
+$h1: $h2 * $ratio;
+
+$headinng-mb: 20px

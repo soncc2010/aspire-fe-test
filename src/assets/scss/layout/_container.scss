@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: convert-rem(24);
+  padding-right: convert-rem(24);
+}
+
+@include media-breakpoint-down("lg") {
+  .container-outer {
+    margin-left: convert-rem(-24);
+    margin-right: convert-rem(-24);
+  }
+}
+
+@include media-breakpoint-up("lg") {
+  .container-outer {
+
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

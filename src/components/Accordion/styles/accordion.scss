@@ -1,0 +1,118 @@
+.accordion {
+  $root: &;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__header {
+    font-size: convert-rem(14);
+    line-height: 1.35;
+    color: $blue-900;
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    background-color: $blue-100;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid $gray-300;
+    border-radius: convert-rem(8);
+    padding: convert-rem(24) convert-rem(60) convert-rem(27) convert-rem(60);
+    position: relative;
+
+    ::v-deep > * {
+      font-size: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: convert-rem(24);
+        z-index: 0;
+        transform: translateY(-50%);
+        width: convert-rem(24);
+        height: convert-rem(24);
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: convert-rem(24);
+      z-index: 1;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      width: convert-rem(24);
+      height: convert-rem(24);
+      background-color: $blue-a-100;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: convert-rem(24);
+      z-index: 2;
+      width: convert-rem(8);
+      height: convert-rem(8);
+      border-width: convert-rem(2) convert-rem(2) 0 0;
+      border-color: $white;
+      border-style: solid;
+      transform: translateY(-50%) rotate(135deg);
+      margin-right: convert-rem(8);
+      margin-top: convert-rem(-2);
+    }
+
+    &.is-active {
+      &::before {
+        transform: translateY(-50%) rotate(-45deg);
+        margin-top: convert-rem(2);
+      }
+    }
+  }
+
+  &__inner {
+    padding: 0 convert-rem(24);
+  }
+
+  &__content {
+    padding: 0;
+  }
+
+  &__item {
+    padding: 0;
+    padding-bottom: convert-rem(24);
+    border: 0;
+    position: relative;
+
+    &--card-detail {
+      #{$root}__header {
+        ::v-deep > * {
+          &::before {
+            background-image: url(#{$base-url}icon_card_detail.svg);
+          }
+        }
+      }
+    }
+
+    &--card-transaction {
+      #{$root}__header {
+        ::v-deep > * {
+          &::before {
+            background-image: url(#{$base-url}icon_card_transaction.svg);
+          }
+        }
+      }
+    }
+  }
+
+  &__bx {
+    border: 1px solid $gray-100;
+    border-radius: convert-rem(8);
+  }
+}

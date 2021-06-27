@@ -1,0 +1,18 @@
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  color: $body-color;
+  font-family: $font-base;
+  font-size: convert-rem($body-font-size);
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  background: $blue-900;
+}
+
+@include media-breakpoint-up("lg") {
+  body {
+    background: $white;
+  }
+}
